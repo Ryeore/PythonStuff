@@ -1,4 +1,5 @@
 # /usr/bin/python3
+# Ready to add more things using below API - codes in documentation
 # https://www.bitstamp.net/api/v2/ticker/
 import requests
 import json
