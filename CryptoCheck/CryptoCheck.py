@@ -3,6 +3,7 @@
 # https://www.bitstamp.net/api/v2/ticker/
 import requests
 import json
+from datetime import datetime
 from time import sleep
 
 
@@ -28,14 +29,18 @@ def getEtherPrice():
 
 def main(thr):
     while True:
+        now = datetime.now()
         try:
             if float(thr) < getBitcoinPrice():
+                print(now)
                 print("ABOVE THRESHOLD!!! price: $" + str(getBitcoinPrice()) + " /BTC")
             else:
+                print(now)
                 print("Last price: $" + str(getBitcoinPrice()) + " /BTC")
             print("Last price: $" + str(getEtherPrice()) + " /ETH\n")
             sleep(10)
         except ValueError:
+            print(now)
             print("Last price: $" + str(getBitcoinPrice()) + " /BTC")
             print("Last price: $" + str(getEtherPrice()) + " /ETH\n")
             sleep(10)
